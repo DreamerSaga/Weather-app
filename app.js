@@ -136,6 +136,18 @@ function handleSubmit(event) {
   searchCity(city.value);
 }
 
+function showLocation(position) {
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let apiKey = "3e1d07e5c88teace8f4369785f8b069o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemp);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
+
 function showFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
@@ -162,6 +174,8 @@ let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheit);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
+let currentLocation = document.querySelector("#location-button");
+currentLocation.addEventListener("click", getCurrentLocation);
 
 searchCity("Klaipeda");
 
