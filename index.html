@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a1b8cc7eaf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app" >
+        <form id="search-form">
+         <div class="row">
+           <div class="col-6" id="search-bar">
+            <div class="box">
+            <input
+              class="city-search"
+              id="city-input"
+              type="search"
+              placeholder="Search City"
+              autocomplete="off"
+            />
+            <input class="search-button" type="Submit" value="🔍" title="Search!"/>
+            <input class="location-button hithere" id="location-button" type="submit" title="Locate my city!" value="📍" ; />
+            </div> </div>
+         </form>
+
+
+<div class="row" id="location">
+  <div class="col-6">
+    <h2 id="city"></h2>
+      </div>
+
+      <div class="col-6" id="today-date">
+        <h4 id="date">Thur, 2 Feb, 2023</h4>
+         <h5 id="time"> 13:37</h5>
+          <br>
+          </div>
+        </div>
+      </div>
+
+<div class="row">
+  <div class="col-6" id="weather-today">
+    <img id="mainIcon" src="" alt="" >
+      <h6 id="description"></h6> <div class="current-temp">
+        <span id="temperature"></span>
+         <span id="units">  <a href="#" id="celsius" class="active">&#176;C</a> | <a href="#" id="fahrenheit"> &#176;F</a></span> 
+      </div>
+   </div>
+
+<div class="col-6">
+  <ul class="details">
+    <li>
+    <i class="fa-brands fa-drupal"></i>
+    <strong> Humidity: </strong><span id="humidity"></span> %</li>
+    <br> 
+    <li>
+    <i class="fa-solid fa-wind"></i>
+    <strong> Wind: </strong><span id="wind"></span> km/h</li>
+    </li>
+  </ul>
+</div>
+</div>
+
+<hr style="height:2px;border:none;background-color:rgb(158, 8, 8);">
+
+<div class="weather-forecast" id="forecast">
+  <!-- <div class="row">
+   <div class="col">
+    <p class="day-1">Friday</p>
+     <div class="grow" id="emoji-1">
+       <img
+          src=""
+          alt="icon"
+          class="icon"
+          width="40"
+          height="40"
+          />
+      </div>
+      <div class="temp-1">
+        <span class="temp-max1">
+          16&#176;|
+        </span>
+        <span class="temp-min1">
+         12&#176;
+         </span>
+        </div>
+   </div>
+
+<div class="col">
+  <p class="day-2">Saturday</p>
+   <div class="grow" id="emoji-2">
+    <img
+      src=""
+      alt="icon"
+      class="icon"
+      width="40"
+      height="40"
+      />
+ </div>
+   <div class="temp-2">  
+    <span class="temp-max2">
+      16&#176;|
+    </span>
+     <span class="temp-min2">
+      12&#176;
+     </span>
+    </div>
+</div>
+
+<div class="col">
+  <p class="day-3">Sunday</p>
+  <div class="grow" id="emoji-3">
+    <img
+       src=""
+       alt="icon"
+       class="icon"
+       width="40"
+       height="40"
+       />
+  </div>
+<div class="temp-3">  
+  <span class="temp-max3">
+      16&#176;|
+    </span>
+    <span class="temp-min3">
+     12&#176;
+   </span>
+  </div>
+ </div>
+
+ <div class="col">
+    <p class="day-4">Monday</p>
+     <div class="grow" id="emoji-4">
+       <img
+         src=""
+           alt="icon"
+           class="icon"
+           width="40"
+          height="40"
+         />
+   </div>
+ <div class="temp-4">  
+  <span class="temp-max4">
+      16&#176;|
+   </span>
+    <span class="temp-min4">
+       12&#176;
+    </span>
+  </div>
+</div>
+
+ <div class="col">
+   <p class="day-5">Tuesday</p>
+   <div class="grow" id="emoji-5">
+      <img
+         src=""
+         alt="icon"
+         class="icon"
+         width="40"
+          height="40"
+        />
+     </div>
+ <div class="temp-5">  
+  <span class="temp-max5">
+     16&#176;|
+     </span>
+    <span class="temp-min5">
+       12&#176;
+    </span>
+    </div>
+            </div>
+          </div> -->
+        </div> 
+      </div>
+    </div>
+<script src="app.js"></script>
+    <small> <p>
+  <a href="https://github.com/DreamerSaga/Weather-app" class="ref" target="_blank">Open Source Code</a> by Liudmila Vetrenko
+</p></small>
+  </body>
+</html>
