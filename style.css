@@ -1,0 +1,133 @@
+.weather-app {
+  max-width: 750px;
+  max-height: 800px;
+  margin: 30px auto;
+  margin-bottom: 10px;
+  padding: 20px 30px 20px 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: rgb(233, 233, 135);
+  font-family: "Josefin Sans", sans-serif;
+  background-size: cover;
+}
+
+#search-bar {
+  padding-left: 30px;
+}
+
+input {
+  border-radius: 10px;
+}
+#location {
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+#city {
+  font-size: 38px;
+  font-weight: 700;
+  padding-left: 25px;
+}
+h4,
+h5 {
+  text-align: right;
+  padding-right: 20px;
+}
+#date {
+  font-size: 18px;
+  text-align: right;
+  margin-right: -10px;
+  font-weight: 600;
+}
+#time {
+  font-size: 15px;
+  text-align: right;
+  margin-right: -10px;
+  font-weight: 600;
+}
+#current-icon {
+  padding-top: 10px;
+  padding-left: 25px;
+}
+#temperature {
+  font-size: 46px;
+  font-weight: 700;
+  padding-left: 45px;
+}
+#description {
+  font-size: 14px;
+  padding-left: 40px;
+  margin-top: -10px;
+  text-transform: capitalize;
+  text-align: justify;
+}
+.details {
+  text-align: right;
+  padding-right: 30px;
+}
+li i {
+  padding-right: 20px;
+}
+ul {
+  list-style: none;
+}
+li {
+  padding-top: 40px;
+  font-size: 18px;
+}
+#forecast {
+  text-align: center;
+  margin-top: 25px;
+}
+.day-1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: aliceblue;
+  margin-bottom: -5px;
+}
+.temp-1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: -5px;
+}
+.temp-max1 {
+  font-size: 18px;
+}
+
+.temp-min1 {
+  opacity: 0.6;
+}
+#current-location-button {
+  background: transparent;
+  border-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+img {
+  transition: 1s ease;
+}
+
+img:hover {
+  -webkit-transform: scale(1.6);
+  -ms-transform: scale(1.6);
+  transform: scale(1.6);
+  transition: 1s ease;
+}
+small {
+  text-align: center;
+}
+#mainIcon {
+  padding-left: 35px;
+}
+.current-temp .active {
+  color: black;
+  cursor: default;
+  font-weight: 700;
+}
+.current-temp .active:hover {
+  text-decoration: none;
+}
+#celsius,
+#fahrenheit {
+  text-decoration: none;
+}
