@@ -140,12 +140,20 @@ function showLocation(position) {
   let lon = position.coords.longitude;
   let lat = position.coords.latitude;
   let apiKey = "3e1d07e5c88teace8f4369785f8b069o";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemp);
 }
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
+}
+
+function showLocation(position) {
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let apiKey = "3e1d07e5c88teace8f4369785f8b069o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemp);
 }
 
 function showFahrenheit(event) {
