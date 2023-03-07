@@ -120,8 +120,39 @@ function displayTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.condition.description);
   console.log(response.data);
-
   getForecast(response.data.coordinates);
+
+  // Changes background depending on temperature
+
+  const temperature1 = Math.round(response.data.temperature.current);
+  const body = document.querySelector("#app");
+  const backgroundImageUrls = {
+    "Below 0": "url(image/below0/6.jpg)",
+    "0-10": "url(image/0-10/1.jpg)",
+    "10-20": "url(image/10-20/1.jpg)",
+    "20-30": "url(image/20-30/1.jpg)",
+    "30-40": "url(image/30-40/1.jpg)",
+  };
+
+  let changeFontColor = document.querySelector("#app");
+
+  function setBackgroundImage(temp) {
+    if (temp < 0) {
+      body.style.backgroundImage = backgroundImageUrls["Below 0"];
+      changeFontColor.style.color = "rgba(245, 238, 220)";
+      changeFontColor.style.opacity = "0.8";
+    } else if (temp >= 0 && temp < 10) {
+      body.style.backgroundImage = backgroundImageUrls["0-10"];
+    } else if (temp >= 10 && temp < 20) {
+      body.style.backgroundImage = backgroundImageUrls["10-20"];
+    } else if (temp >= 20 && temp < 30) {
+      body.style.backgroundImage = backgroundImageUrls["20-30"];
+    } else if (temp >= 30 && temp < 40) {
+      body.style.backgroundImage = backgroundImageUrls["30-40"];
+    }
+  }
+
+  setBackgroundImage(temperature1);
 }
 
 function searchCity(city) {
@@ -188,49 +219,7 @@ currentLocation.addEventListener("click", getCurrentLocation);
 searchCity("Klaipeda");
 
 // ------------------------------------------------------------------------
-// function backgroundChange(description) {
-//   if (descriptionElement === "Rain") {
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/rain.gif)";
-//   } else if (descriptionElement === "Clear") {
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/clear.gif)";
-//   } else if (descriptionElement === "Snow") {
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/snow.gif)";
-//   }
-// }
-// Background
-// switch (descrip) {
-//   case "Snow":
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/snow.gif)";
-//     break;
-//   case "Scattered Clouds":
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/clouds.gif)";
-//     break;
-//   case "Clear Sky":
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/clear.gif)";
-//     break;
-//   case "Fog":
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/fog.gif)";
-//     break;
-//   case "Rain":
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/rain.gif)";
-//     break;
-//   case "Thunderstorm":
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/thunderstorm.gif)";
-//     break;
-//   default:
-//     document.getElementById("wrapper-bg").style.backgroundImage =
-//       "url(image/earlymorn.gif)";
-//     break;
-// }
+
 // let main = response.data.condition.description;
 // console.log(main);
 
@@ -281,4 +270,15 @@ searchCity("Klaipeda");
 //   setBackground.style.backgroundSize = "cover";
 //   changeFontColor.style.color = "black";
 //   changeCenterColor.style.color = "rgba(245, 238, 220)";
+// }
+// var main = document.querySelector("#wrapper");
+// const temperature = response.data.temperature.current;
+// const weatherDescription = response.data.condition.description;
+// let backgroundImage = url("image/clear.gif");
+// if (temperature > 20) {
+//   if (weatherDescription.includes("clear")) {
+//     backgroundImage = url("image/clouds.gif");
+//   } else {
+//     backgroundImage = url("image/fog.gif");
+//   }
 // }
