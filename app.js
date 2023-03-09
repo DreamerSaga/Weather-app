@@ -122,37 +122,81 @@ function displayTemp(response) {
   console.log(response.data);
   getForecast(response.data.coordinates);
 
-  // Changes background depending on temperature
+  // Changes background picture depending on temperature
 
   const temperature1 = Math.round(response.data.temperature.current);
   const body = document.querySelector("#app");
   const backgroundImageUrls = {
-    "Below 0": "url(image/below0/6.jpg)",
-    "0-10": "url(image/0-10/1.jpg)",
+    "Below 0": "url(winter/6.jpg)",
+    "0-5": "url(summer/11.jpg)",
+    "5-10": "url(.jpg)",
     "10-20": "url(image/10-20/1.jpg)",
     "20-30": "url(image/20-30/1.jpg)",
     "30-40": "url(image/30-40/1.jpg)",
   };
 
   let changeFontColor = document.querySelector("#app");
+  let setBackground = document.querySelector("#app");
 
   function setBackgroundImage(temp) {
     if (temp < 0) {
       body.style.backgroundImage = backgroundImageUrls["Below 0"];
-      changeFontColor.style.color = "rgba(245, 238, 220)";
-      changeFontColor.style.opacity = "0.8";
-    } else if (temp >= 0 && temp < 10) {
-      body.style.backgroundImage = backgroundImageUrls["0-10"];
+      // changeFontColor.style.color = "rgba(245, 238, 220)";
+      setBackground.style.backgroundSize = "cover";
+      // changeFontColor.style.opacity = "0.8";
+    } else if (temp >= 0 && temp < 5) {
+      body.style.backgroundImage = backgroundImageUrls["0-5"];
+      changeFontColor.style.color = "rgba(240, 240, 231)";
+      setBackground.style.backgroundSize = "cover";
+      // changeFontColor.style.opacity = "0.8";
+    } else if (temp >= 5 && temp < 10) {
+      body.style.backgroundImage = backgroundImageUrls["5-10"];
     } else if (temp >= 10 && temp < 20) {
       body.style.backgroundImage = backgroundImageUrls["10-20"];
+      // changeFontColor.style.color = "rgba(245, 238, 220)";
+      // changeFontColor.style.opacity = "0.8";
     } else if (temp >= 20 && temp < 30) {
       body.style.backgroundImage = backgroundImageUrls["20-30"];
+      // changeFontColor.style.color = "rgba(245, 238, 220)";
+      // changeFontColor.style.opacity = "0.8";
     } else if (temp >= 30 && temp < 40) {
       body.style.backgroundImage = backgroundImageUrls["30-40"];
+      // changeFontColor.style.color = "rgba(245, 238, 220)";
+      // changeFontColor.style.opacity = "0.8";
     }
   }
-
   setBackgroundImage(temperature1);
+
+  // function setBackgroundImage(temp) {
+  //   if (temp < 0) {
+  //     let slideshowImages = [
+  //       "url(winter/1.jpg",
+  //       "url(winter/2.jpg",
+  //       "url(winter/3.jpg",
+  //     ];
+  //     displaySlideshow(slideshowImages);
+  //   } else if (temp >= 0 && temp < 10) {
+  //     let slideshowImages = [
+  //       "url(spring/1.jpg",
+  //       "url(spring/2.jpg",
+  //       "url(spring/3.jpg",
+  //     ];
+  //     displaySlideshow(slideshowImages);
+  //   }
+  // }
+
+  // function displaySlideshow(slideshowImages) {
+
+  //   let slideshowContainer = document.querySelector("#app");
+
+  //   for (let i = 0; i < slideshowImages.length; i++) {
+
+  //     let image = document.createElement("img");
+  //     image.src = slideshowImages[i];
+  //     slideshowContainer.appendChild(image);
+  //   }
+  // }
+  // setBackgroundImage(temperature1);
 }
 
 function searchCity(city) {
@@ -217,68 +261,3 @@ let currentLocation = document.querySelector("#location-button");
 currentLocation.addEventListener("click", getCurrentLocation);
 
 searchCity("Klaipeda");
-
-// ------------------------------------------------------------------------
-
-// let main = response.data.condition.description;
-// console.log(main);
-
-// let setBackground = document.querySelector(".app");
-// let changeFontColor = document.querySelector(".details");
-// let changeCenterColor = document.querySelector("#center");
-
-// switch (main) {
-//   case "Snow":
-//     let style = weatherCondition.style;
-//     style.background = `url("https://media0.giphy.com/media/7tYNMJ29GcbE4/giphy.gif")`;
-//     style.width = "100%";
-//     style.height = "100%";
-//     style.position = "absolute";
-//     style.left = "0px";
-//     style.top = "0px";
-//     style.zIndex = "2000";
-//     console.log("hello");
-//     break;
-//   default:
-//     console.log("default case");
-// }
-
-// if (response.data.condition.description <= 3) {
-//   setBackground.style.backgroundImage = `url("https://images.pexels.com/photos/3801464/pexels-photo-3801464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")`;
-//   setBackground.style.backgroundSize = "cover";
-//   changeFontColor.style.color = "rgba(245, 238, 220)";
-//   changeFontColor.style.opacity = "0.8";
-//   changeCenterColor.style.color = "rgba(245, 238, 220)";
-//   changeCenterColor.style.opacity = "0.8";
-// } else if (response.data.condition.description <= 10) {
-//   setBackground.style.backgroundImage = `url("https://images.pexels.com/photos/5192874/pexels-photo-5192874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")`;
-//   setBackground.style.backgroundSize = "cover";
-//   changeFontColor.style.color = "rgba(245, 238, 220)";
-//   changeFontColor.style.opacity = "0.8";
-//   changeCenterColor.style.color = "rgba(245, 238, 220)";
-//   changeCenterColor.style.opacity = "0.8";
-// } else if (response.data.condition.description >= 25) {
-//   setBackground.style.backgroundImage = `url("https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")`;
-//   setBackground.style.backgroundSize = "cover";
-//   changeFontColor.style.color = "black";
-//   changeCenterColor.style.color = "black";
-// } else if (response.data.condition.description >= 30) {
-//   setBackground.style.backgroundImage = `url("https://images.pexels.com/photos/998653/pexels-photo-998653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")`;
-//   setBackground.style.backgroundSize = "cover";
-// } else {
-//   setBackground.style.backgroundImage = `url("https://images.pexels.com/photos/3684396/pexels-photo-3684396.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")`;
-//   setBackground.style.backgroundSize = "cover";
-//   changeFontColor.style.color = "black";
-//   changeCenterColor.style.color = "rgba(245, 238, 220)";
-// }
-// var main = document.querySelector("#wrapper");
-// const temperature = response.data.temperature.current;
-// const weatherDescription = response.data.condition.description;
-// let backgroundImage = url("image/clear.gif");
-// if (temperature > 20) {
-//   if (weatherDescription.includes("clear")) {
-//     backgroundImage = url("image/clouds.gif");
-//   } else {
-//     backgroundImage = url("image/fog.gif");
-//   }
-// }
