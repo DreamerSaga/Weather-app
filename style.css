@@ -1,31 +1,32 @@
 .weather-app {
-  max-width: 750px;
+  max-width: 800px;
   max-height: 800px;
   margin: 30px auto;
   margin-bottom: 10px;
   padding: 20px 30px 20px 30px;
   border: 1px solid black;
   border-radius: 5px;
-  background: rgb(233, 233, 135);
+  background: rgb(240, 240, 231);
   font-family: "Josefin Sans", sans-serif;
   background-size: cover;
+  text-align: justify;
 }
 
-#search-bar {
-  padding-left: 30px;
+#weather-today {
+  text-align: center;
 }
-
 input {
   border-radius: 10px;
 }
 #location {
   margin-top: 30px;
-  margin-bottom: -30px;
 }
 #city {
-  font-size: 38px;
+  font-size: 48px;
   font-weight: 700;
-  padding-left: 25px;
+}
+h2 {
+  text-align: center;
 }
 h4,
 h5 {
@@ -33,37 +34,39 @@ h5 {
   padding-right: 20px;
 }
 #date {
-  font-size: 18px;
+  font-size: 16px;
   text-align: right;
   margin-right: -10px;
   font-weight: 600;
 }
 #time {
-  font-size: 15px;
+  font-size: 14px;
   text-align: right;
   margin-right: -10px;
   font-weight: 600;
 }
 #current-icon {
-  padding-top: 10px;
-  padding-left: 25px;
+  padding-top: 20px;
+  text-align: center;
 }
 #temperature {
-  font-size: 46px;
+  font-size: 60px;
   font-weight: 700;
-  padding-left: 45px;
+
+  text-align: center;
 }
 #description {
-  font-size: 14px;
-  padding-left: 40px;
-  margin-top: -10px;
+  font-size: 18px;
+  margin-top: 5px;
   text-transform: capitalize;
-  text-align: justify;
+  text-align: center;
 }
 .details {
-  text-align: right;
-  padding-right: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 20px;
 }
+
 li i {
   padding-right: 20px;
 }
@@ -73,15 +76,19 @@ ul {
 li {
   padding-top: 40px;
   font-size: 18px;
+  display: inline;
+  margin: 0 40px 0;
 }
 #forecast {
   text-align: center;
-  margin-top: 25px;
-  background-color: rgba(164, 160, 160, 0.61);
-  backdrop-filter: blur(1px);
-  color: black;
+  background-color: rgba(190, 186, 186, 0.874);
+  backdrop-filter: blur(0.2px);
+  color: rgb(7, 7, 7);
   border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
 }
+
 .day-1 {
   font-size: 18px;
   font-weight: 600;
@@ -121,7 +128,7 @@ small {
   text-align: center;
 }
 #mainIcon {
-  padding-left: 35px;
+  text-align: center;
 }
 .current-temp .active {
   color: black;
@@ -134,4 +141,5 @@ small {
 #celsius,
 #fahrenheit {
   text-decoration: none;
+  text-align: center;
 }
