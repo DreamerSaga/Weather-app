@@ -30,9 +30,9 @@ if (minutes < 10) {
 }
 
 let h4 = document.querySelector("h4");
-h4.innerHTML = `${day}, ${month} ${date}, ${year}`;
+h4.innerHTML = `${month}  ${date},  ${day},  ${year}`;
 let h5 = document.querySelector("h5");
-h5.innerHTML = `Local time - ${hours}:${minutes}`;
+h5.innerHTML = `${hours}:${minutes}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -127,42 +127,105 @@ function displayTemp(response) {
   const temperature1 = Math.round(response.data.temperature.current);
   const body = document.querySelector("#app");
   const backgroundImageUrls = {
-    "Below 0": "url(winter/6.jpg)",
-    "0-5": "url(summer/11.jpg)",
-    "5-10": "url(.jpg)",
-    "10-20": "url(image/10-20/1.jpg)",
-    "20-30": "url(image/20-30/1.jpg)",
-    "30-40": "url(image/30-40/1.jpg)",
+    "Below 0": "url(img/1.jpg)",
+    "0-5": "url(img/14.jpg)",
+    "5-10": "url(img/10.jpg)",
+    "10-15": "url(img/12.jpg)",
+    "15-20": "url(img/3.jpg)",
+    "20-25": "url(img/8.jpg)",
+    "25-30": "url(img/9.jpg)",
+    "30+": "url(img/7.jpg)",
   };
-
-  let changeFontColor = document.querySelector("#app");
   let setBackground = document.querySelector("#app");
+
+  let changeColorDetails = document.querySelector("#details");
+
+  let changeFontColorDescr = document.querySelector("#description");
+
+  let changeFontColorTemp = document.querySelector("#temperature");
+  let changeFontColorCel = document.querySelector("#celsius");
+
+  let changeFontColorCity = document.querySelector("#city");
+
+  let changeColorDate = document.querySelector("#date");
+  let changeColorTime = document.querySelector("#time");
 
   function setBackgroundImage(temp) {
     if (temp < 0) {
       body.style.backgroundImage = backgroundImageUrls["Below 0"];
-      // changeFontColor.style.color = "rgba(245, 238, 220)";
+      setBackground.style.color = "rgba(7,7,7)";
+      changeFontColorTemp.style.color = "rgba(7,7,7)";
+      changeFontColorCel.style.color = "rgba(7,7,7)";
+      changeColorDetails.style.color = "rgba(7,7,7)";
       setBackground.style.backgroundSize = "cover";
-      // changeFontColor.style.opacity = "0.8";
+      setBackground.style.opacity = "0.8";
     } else if (temp >= 0 && temp < 5) {
       body.style.backgroundImage = backgroundImageUrls["0-5"];
-      changeFontColor.style.color = "rgba(240, 240, 231)";
+      changeFontColorCity.style.color = "rgba(7,7,7)";
+      changeFontColorDescr.style.color = "rgba(7,7,7)";
+      changeColorDetails.style.color = "rgba(255,255,255)";
+      changeFontColorTemp.style.color = "rgba(255,255,255)";
+      changeFontColorCel.style.color = "rgba(255,255,255)";
       setBackground.style.backgroundSize = "cover";
-      // changeFontColor.style.opacity = "0.8";
+      setBackground.style.opacity = "0.75";
     } else if (temp >= 5 && temp < 10) {
       body.style.backgroundImage = backgroundImageUrls["5-10"];
-    } else if (temp >= 10 && temp < 20) {
-      body.style.backgroundImage = backgroundImageUrls["10-20"];
-      // changeFontColor.style.color = "rgba(245, 238, 220)";
-      // changeFontColor.style.opacity = "0.8";
-    } else if (temp >= 20 && temp < 30) {
-      body.style.backgroundImage = backgroundImageUrls["20-30"];
-      // changeFontColor.style.color = "rgba(245, 238, 220)";
-      // changeFontColor.style.opacity = "0.8";
-    } else if (temp >= 30 && temp < 40) {
-      body.style.backgroundImage = backgroundImageUrls["30-40"];
-      // changeFontColor.style.color = "rgba(245, 238, 220)";
-      // changeFontColor.style.opacity = "0.8";
+      setBackground.style.color = "rgba(7,7,7)";
+      changeFontColorTemp.style.color = "rgba(7,7,7)";
+      changeColorDetails.style.color = "rgba(7,7,7)";
+      changeFontColorDescr.style.color = "rgba(7,7,7)";
+      changeFontColorCel.style.color = "rgba(7,7,7)";
+      changeFontColorCity.style.color = "rgba(7,7,7)";
+      changeColorDate.style.color = "rgba(7,7,7)";
+      changeColorTime.style.color = "rgba(7,7,7)";
+      setBackground.style.backgroundSize = "cover";
+      setBackground.style.opacity = "0.8";
+    } else if (temp >= 10 && temp < 15) {
+      body.style.backgroundImage = backgroundImageUrls["10-15"];
+      changeFontColorTemp.style.color = "rgba(255,255,255)";
+      changeColorDetails.style.color = "rgba(255,255,255)";
+      changeFontColorDescr.style.color = "rgba(255,255,255)";
+      changeFontColorCel.style.color = "rgba(255,255,255)";
+      changeFontColorCity.style.color = "rgba(255,255,255)";
+      changeColorDate.style.color = "rgba(255,255,255)";
+      changeColorTime.style.color = "rgba(255,255,255)";
+      setBackground.style.backgroundSize = "cover";
+      setBackground.style.opacity = "0.8";
+    } else if (temp >= 15 && temp < 20) {
+      body.style.backgroundImage = backgroundImageUrls["15-20"];
+      setBackground.style.color = "rgba(7,7,7)";
+      changeFontColorTemp.style.color = "rgba(7,7,7)";
+      changeColorDetails.style.color = "rgba(7,7,7)";
+      changeFontColorDescr.style.color = "rgba(7,7,7)";
+      changeFontColorCel.style.color = "rgba(7,7,7)";
+      changeFontColorCity.style.color = "rgba(7,7,7)";
+      changeColorDate.style.color = "rgba(7,7,7)";
+      changeColorTime.style.color = "rgba(7,7,7)";
+
+      setBackground.style.backgroundSize = "cover";
+      setBackground.style.opacity = "0.75";
+    } else if (temp >= 20 && temp < 25) {
+      body.style.backgroundImage = backgroundImageUrls["20-25"];
+      setBackground.style.color = "rgba(7,7,7)";
+      setBackground.style.backgroundSize = "cover";
+      setBackground.style.opacity = "0.8";
+    } else if (temp >= 25 && temp < 30) {
+      body.style.backgroundImage = backgroundImageUrls["25-30"];
+      changeColorDetails.style.color = "rgba(255,255,255)";
+      changeFontColorDescr.style.color = "rgba(255,255,255)";
+      setBackground.style.backgroundSize = "cover";
+      setBackground.style.opacity = "0.8";
+    } else if (temp >= 30) {
+      body.style.backgroundImage = backgroundImageUrls["30+"];
+      changeFontColorTemp.style.color = "rgba(7,7,7)";
+      changeColorDetails.style.color = "rgba(7,7,7)";
+      changeFontColorDescr.style.color = "rgba(7,7,7)";
+      changeFontColorCel.style.color = "rgba(7,7,7)";
+      changeFontColorCity.style.color = "rgba(7,7,7)";
+      changeColorDate.style.color = "rgba(7,7,7)";
+      changeColorTime.style.color = "rgba(7,7,7)";
+      setBackground.style.backgroundSize = "cover";
+      setBackground.style.opacity = "0.8";
     }
   }
   setBackgroundImage(temperature1);
