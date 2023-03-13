@@ -6,10 +6,11 @@
   padding: 20px 30px 20px 30px;
   border: 1px solid black;
   border-radius: 5px;
-  background: rgb(240, 240, 231);
-  font-family: "Josefin Sans", sans-serif;
+  background: rgb(240, 236, 231);
+  font-family: "Playfair Display", serif;
   background-size: cover;
   text-align: justify;
+  color: black;
 }
 
 #weather-today {
@@ -19,11 +20,12 @@ input {
   border-radius: 10px;
 }
 #location {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #city {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 55px;
+  font-weight: 800;
+  /* color: black; */
 }
 h2 {
   text-align: center;
@@ -34,37 +36,47 @@ h5 {
   padding-right: 20px;
 }
 #date {
-  font-size: 16px;
+  font-size: 18px;
   text-align: right;
   margin-right: -10px;
-  font-weight: 600;
+  font-weight: 800;
+  /* color: black; */
 }
 #time {
-  font-size: 14px;
+  font-size: 18px;
   text-align: right;
   margin-right: -10px;
-  font-weight: 600;
+  font-weight: 800;
+  /* color: black; */
 }
 #current-icon {
   padding-top: 20px;
   text-align: center;
 }
 #temperature {
-  font-size: 60px;
-  font-weight: 700;
-
+  font-size: 65px;
+  font-weight: 900;
   text-align: center;
+  /* color: black; */
+}
+#units {
+  font-size: 25px;
+  font-weight: 600;
+  /* color: black; */
 }
 #description {
-  font-size: 18px;
-  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: -5px;
   text-transform: capitalize;
   text-align: center;
+  /* color: black; */
 }
 .details {
   text-align: center;
   margin-bottom: 25px;
   margin-top: 20px;
+  color: black;
 }
 
 li i {
@@ -75,28 +87,29 @@ ul {
 }
 li {
   padding-top: 40px;
-  font-size: 18px;
+  font-size: 20px;
   display: inline;
   margin: 0 40px 0;
 }
 #forecast {
   text-align: center;
-  background-color: rgba(190, 186, 186, 0.874);
+  background-color: rgba(178, 175, 175, 0.577);
   backdrop-filter: blur(0.2px);
   color: rgb(7, 7, 7);
   border-radius: 5px;
   margin-right: 10px;
   text-align: center;
 }
+/* rgba(199, 196, 196, 0.507); */
 
 .day-1 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: aliceblue;
   margin-bottom: -5px;
 }
 .temp-1 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-top: -5px;
 }
@@ -131,7 +144,7 @@ small {
   text-align: center;
 }
 .current-temp .active {
-  color: black;
+  /* color: black; */
   cursor: default;
   font-weight: 700;
 }
@@ -143,3 +156,5 @@ small {
   text-decoration: none;
   text-align: center;
 }
+
+/*  for minus forecast box -  background-color: rgba(178, 175, 175, 0.741); */
